@@ -10,6 +10,8 @@ metadata:
     service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: '*'
     # Increase the ELB idle timeout to avoid issues with WebSockets or Server-Sent Events.
     service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: '3600'
+    # Use internal/private ELB
+    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
 spec:
   type: LoadBalancer
   selector:
